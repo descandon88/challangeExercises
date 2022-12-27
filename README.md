@@ -1,2 +1,2 @@
 # challangeExercises
-Ejericicos y practicos en Javascript y ReactJS
+Ejercicios y prácticos en Javascript y ReactJS
