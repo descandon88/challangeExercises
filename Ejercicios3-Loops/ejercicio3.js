@@ -66,3 +66,18 @@ tablaDelNueve(9);
 // suma de todos los dígitos, validar
 // que el número ingresado no
 // contenga letras.
+
+
+const sumTodosDigitos =(num)=> {
+    let sum = 0; 
+    for (let i = 0; i < num.length; i++)
+    {
+        sum = sum + parseInt(num[i]);
+    }
+    console.log('La suma de los dígitos del numero ingresado '+num+' es '+ sum)
+    // return sum;
+};
+
+let numValue= prompt('Ingrese un número:');
+
+sumTodosDigitos(numValue);
