@@ -81,3 +81,29 @@ const sumTodosDigitos =(num)=> {
 let numValue= prompt('Ingrese un número:');
 
 sumTodosDigitos(numValue);
+
+// Ejercicio#6
+// Realizar la suma de todos los
+// números pares entre N y M donde
+// N y M los ingresa un usuario.
+
+
+const sumParesEntreNyM = (n,m) => {
+    let sum = 0;
+    let num = m-n;
+    for (let i = n; i < m; i++)
+    {
+        if (i%2 ==0 && i!=n) { 
+        sum = sum + parseInt(i);
+        console.log('Los números pares son: '+i+' entre '+' '+n+' y '+m);
+        }
+       
+    }
+    console.log('La suma de los dígitos entre N y M es: ' +  sum);
+
+}
+
+let nValue= prompt('Ingrese el valor N:');
+let mValue= prompt('Ingrese el valor M:');
+
+sumParesEntreNyM(nValue,mValue);
