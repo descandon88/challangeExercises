@@ -107,11 +107,16 @@ const sumatoriaNprimeros = (num) => {
   let sum = 0;
   let array = [];
   for (let i = 0; i < num; i++) {
-    array[i]=0;
+    array[i] = 0;
     if (i > 0) {
       array[i] = i;
       sum += array[i];
-      console.log("aca van las iteraciones: " + array[i]+' y las suma de los numeros maximo N: '+sum);
+      console.log(
+        "aca van las iteraciones: " +
+          array[i] +
+          " y las suma de los numeros maximo N: " +
+          sum
+      );
     }
   }
   console.log(sum);
@@ -123,3 +128,19 @@ sumatoriaNprimeros(nPrimerosValue);
 // Ejercicio # 8
 // Realizar el factorial de los primeros
 // N números.
+const numFactorial = (numfactorial) => {
+  let factorial = 1;
+  let array = [];
+  for (let index = numfactorial; index > 0; index--) {
+    if (index>0) { 
+    array[index] = index;
+    }
+  }
+  console.log('El array formado es el siguiente: '+ array);
+  for (let i =1; i<array.length;i++){
+    factorial *=i;
+    console.log(factorial);
+
+  }
+  console.log('El factorial de '+numfactorial+' es '+factorial);
+};
