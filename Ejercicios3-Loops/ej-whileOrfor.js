@@ -68,4 +68,56 @@ numEsPerfecto(6);
 // Ejercicio#4 - Generar los primeros N números
 // primos, donde n es ingresado por el
 // usuario.
+const generarNprimerosNumPrimos = (n)=> {
+    let isPrime=true;
+    let primos =[];
 
+    let noprimos = [];
+    for (let index=1; index<=n; index++ ) {
+        if (index>=2 ) { 
+            for (let j=2; j<index; j++){ 
+                    if(index % j===0) { 
+                        isPrime = false;
+                        break;
+                     } 
+                    isPrime = true;
+            }
+            if (isPrime) {
+                primos.push(index);
+            } else {
+                noprimos.push(index);
+            }
+            console.log(index); 
+
+        }
+    }
+    console.log('los numeros primos de N son: '+ primos);
+    console.log('los numeros NO primos de N son: '+ noprimos);
+ 
+
+}
+generarNprimerosNumPrimos(17);
+// Ejercicio #5 
+// Generar los primeros N números
+// perfectos.
+
+const generarNprimerosNumPerfectos = (num)=> {
+    let array = [];
+    let sum = 0 ;
+    for (let index = 1; index <= num; index++) {
+        for (let j = 0; j < index; j++) {
+            if (index%j===0) {
+                array.push(j);
+                sum +=j;
+            }                
+        }
+        
+        // console.log('index : '+index);
+        if (sum===index){console.log('el número '+index + ' SI es un numero perfecto porque la suma de sus dividores ['+ array + '] es igual a '+ index)}else {console.log('el número '+index + ' no es numero perfecto porque la suma de sus divisores ['+array+'] es igual '+ sum)}
+        sum=0;
+        array=[];
+    }
+       
+}
+
+generarNprimerosNumPerfectos(8);
