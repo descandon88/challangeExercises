@@ -144,3 +144,7 @@ const numFactorial = (numfactorial) => {
   }
   console.log('El factorial de '+numfactorial+' es '+factorial);
 };
+
+numFactorial(4);
+
+
