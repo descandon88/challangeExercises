@@ -88,3 +88,52 @@ cuadroHueco(5);
 // * * * * * * * *
 //  * * * * * * *
 // * * * * * * * *
+
+// Pirámide izquierda:
+// *
+// **
+// ***
+// ****
+// *****
+
+const piramideIzquierda = (max) => {
+    let ancho = [];
+    let col ='';
+    for (let index = 1; index <= max; index++) {
+        col +='*';
+        console.log(col);
+        
+    }
+    
+
+}
+
+piramideIzquierda (6);
+
+// Diamante:
+// *
+// ***
+// *****
+// *******
+// *********
+// *******
+// *****
+// ***
+// *
+
+const diamante =(maxcol)=>{
+    let sup ='';
+    let inf ='';
+    for (let index = 0; index < maxcol; index++) {
+        sup +='*';
+        console.log(sup);    
+    }
+    inf = sup;
+    for (let index = 1 ; index < maxcol; index++) {
+         inf = sup.substring(index);
+
+        console.log(inf);    
+    }
+}
+diamante (7);
+
