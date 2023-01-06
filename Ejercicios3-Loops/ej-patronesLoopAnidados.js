@@ -137,3 +137,48 @@ const diamante =(maxcol)=>{
 }
 diamante (7);
 
+// Pirámide invertida:
+// *********
+// *******
+// *****
+// ***
+// *
+// Dibujar los siguientes patrones ocupando document.write
+const piramideInvertida =(maxCol)=> {
+    let obj='';
+    let cols='';
+    for (let index = 0; index < maxCol; index++) {
+        obj +='*';
+    }
+    for (let i = 0; i < maxCol; i++) {
+        cols = obj.substring(i);
+
+        console.log(cols); 
+    }
+}
+piramideInvertida(8);
+
+// Pirámide centrada:
+//       *
+//      ***
+//     *****
+//    *******
+//   *********
+
+const piramideCentrada = (maxCol)=> {
+    let obj = [];
+    // let tmp = '';
+    // let result = '';
+    for (let index = maxCol; index >=0; index--) {
+             obj +='\n';
+        for (let j = 0; j <= maxCol; j++) {
+            if (index>=j) {obj +='\xa0';} else { obj+='*';}       
+        }
+        for (let j = maxCol-1; j > 0; j--) {
+            if (index>=j) {obj +='\xa0';} else { obj+='*';}       
+        }
+    }
+
+    console.log(obj);
+}
+piramideCentrada(5);
