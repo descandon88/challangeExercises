@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .col {
+          margin: 2%;  
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+    <title>Figuras Anidadas</title>
+    
+</head>
+<body >
+    <header><h1>Figuras Anidadas</h1></header>
+    <main>
+      
+        <div class="container">
+            <div class="row">
+            <div class="col">
+                <h2>Cuadrado Hueco</h2>
+                <script>
+                    const cuadroHueco =(num)=> {
+                        let lastNum = num-1;
+                        let figura = [];
+                        let variable ='';
+                        for (let index = 0; index < num; index++) {
+                            if (index === 0 || index ===lastNum) {
+                                for (let i = 0; i < num; i++ ) {
+                                    variable +='*';
+                                    figura.push('*');
+                                }
+                                variable+='</br>'; 
+                                // document.write('</br>');
+                            } else {
+                                for (let j=0; j < num; j++) {
+                                    if (j!==0 && j!==lastNum) 
+                                    { 
+                                    variable +='&emsp';
+                                    figura.push('&emsp');
+                                    }
+                                    else {
+                                        variable +='*';
+                                        figura.push('*');
+                                    }
+                                
+                                }
+                                variable+='</br>'; 
+                            }
+                        
+                            
+                        }
+                        document.write(variable);
+                    }
+
+                    cuadroHueco(5);
+                </script>
+            </div>
+            <div class="col">
+                <h2>Pirámide de Izquierda</h2>
+                <script>
+                const piramideIzquierda = (max) => {
+                    let ancho = [];
+                    let col ='';
+                    for (let index = 1; index <= max; index++) {
+                        col +='*';
+                        document.write('</br>');
+                        document.write(col);                        
+                        }                    
+                    }
+                piramideIzquierda (6);
+                </script>
+            </div> 
+        </div>
+            <div class="row"> 
+            <div class="col">
+                <h2>Diamante</h2>
+                <script>
+                    const diamante =(maxcol)=>{
+                        let sup ='';
+                        let inf ='';
+                        for (let index = 0; index < maxcol; index++) {
+                            sup +='*';
+                            document.write('</br>');
+                            document.write(sup);    
+                        }
+                        inf = sup;
+                        for (let i = 1 ; i < maxcol; i++) {
+                            inf = sup.substring(i);
+                            document.write('</br>');  
+                            document.write(inf);
+                            
+                        }
+                    }
+                    diamante(7);
+                </script>
+            </div>
+            <div class="col">
+                <h2>Pirámide Invertida</h2>
+                <script>
+                    const piramideInvertida=(maxCol)=>{
+                        let obj='';
+                        let cols='';
+                        for (let index = 0; index < maxCol; index++) {
+                            obj +='*';
+                            
+                        }
+                        for (let i = 0; i < maxCol; i++) {
+                            document.write('</br>');  
+                            cols = obj.substring(i);
+                            document.write(cols); 
+                        }
+                        
+                    }
+                    piramideInvertida(8);
+                </script>
+            </div>
+
+            <div class="col">
+                <h2>Piramide Centrada</h2>
+                <script>
+                    const piramideCentrada = (maxCol)=> {
+                        let obj = [];
+                        let col = maxCol-1;
+                        for (let index = maxCol; index >=0; index--) {
+                                document.write('</br>');
+                            for (let j = 0; j <= maxCol; j++) {
+                                if (index>=j) {document.write('&nbsp');} else { document.write('*');}       
+                            }
+                            for (let j = col; j > 0; j--) {
+                                if (index>=j) {document.write('&nbsp');} else { document.write('*')}       
+                            }
+                        }
+                
+                        document.write(obj);
+                    }
+                    piramideCentrada(5);
+                </script>
+            </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
