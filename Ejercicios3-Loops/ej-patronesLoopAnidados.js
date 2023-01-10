@@ -88,7 +88,27 @@ cuadroHueco(5);
 // * * * * * * * *
 //  * * * * * * *
 // * * * * * * * *
+const tableroDeAjedez=()=> {
+    let variable = '';
+    let max = 8;
+    for (let index = 0; index < max; index++) {
+        for (let i = 0; i < max; i++) {
+            if(i%2===0 && index%2!==0) {
+                variable += '*';
 
+            } 
+            else if (i%2!==0) {
+                 variable += 'O';
+           }
+           if(i%2!==0 && index%2===0) {
+                variable +='*';
+           }
+        }
+        variable +='\n';
+    }
+    console.log(variable);
+}
+tableroDeAjedez();
 // Pirámide izquierda:
 // *
 // **
