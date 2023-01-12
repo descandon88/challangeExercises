@@ -61,10 +61,58 @@ persona1.esMayorEdad();
 
 
 // ○ Crear un array que contenga varios objetos persona
-
+const variasPersonas = [
+    {
+    nombre: 'Tony',
+    apellido: 'Stark',
+    edad:45,
+    direccion: {
+        ciudad: 'New York',
+        zip: 55321321,
+        lat:14.3232,
+        lng:34.923321
+        }
+    },
+    {
+    nombre: 'Peter',
+    apellido: 'Parquer',
+    edad:17,
+    direccion: {
+        ciudad: 'New York',
+        zip: 55321321,
+        lat:14.3232,
+        lng:34.923321
+        }
+    },
+    {
+    nombre: 'Bruce',
+    apellido: 'Baner',
+    edad:52,
+    direccion: {
+        ciudad: 'Boston',
+        zip: 55321321,
+        lat:14.3232,
+        lng:34.923321
+        }
+    }
+];
 // ○ Crear una función que reciba el array y devuelva la edad promedio
 // del grupo de personas
+const edadPromedio=(objeto)=>{
+    let sum = 0;
+    let promedio = 0;
+    const sumEdad = [...objeto].map((obj)=>{    
+        return sum+=obj.edad;
+   
+       
+    }); 
+    console.log(sumEdad);
+    promedio = Math.max(...sumEdad)/sumEdad.length;
+    console.log(promedio);
+    return promedio;
+};
 
+edadPromedio(variasPersonas);
 // Teléfono
 // ○ Crear una función constructora que devuelva objetos del tipo
 // teléfono, como argumento debe recibir un número de teléfono, el
