@@ -36,18 +36,19 @@ devolverPromedioArreglo(Arreglo);
 const promedioArregloDentroRango = (max,min,array)=> {
     let promedio = 0;
     let arrayInt = 0;
-    let count=0
+    let countArray=[];
     for (let index = 0; index < array.length; index++) {
         if(array[index]>=min && array[index]<=max){
             arrayInt+=array[index];
-            count+=1;
-            console.log('Valor del posicion del array es '+array[index]+' con index '+index);
-        }
-        
+            countArray.push(arrayInt);
+            console.log('El valor'+' con index '+index+ ' del array es: '+array[index]);
+        }        
     }
-    promedio = arrayInt / count;
-    console.log('El promedio de los valores del arraglo dentro del rango ingresado es: '+ promedio);
+    promedio = arrayInt / countArray.length;
+    console.log('El promedio de los valores del arreglo dentro del rango ingresado es: '+ promedio);
 };
+
+// Arreglo para testear la función
 let arreglo = [10,12,13,14,20,31,35,40,42,52,56,59];
 
-promedioArregloDentroRango(40,20,arreglo)
+promedioArregloDentroRango(35,15,arreglo);
