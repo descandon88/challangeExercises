@@ -4,39 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #tiempo {
+            width: 50%;
+            height: 20%;
+            font-size: 3em;
+        }
+        #demo {
+            font-size: 2em;
+            margin-bottom: 1%;
+            margin-top: 1%;
+        }
+        .ejercicio01, .ejericicio02{
+            margin-top:1%;
+            margin-bottom: 2%;
+        }
+    </style>
     <title>DOM</title>
 </head>
 <body>
-    <p id="demo"> :( </p>
-    <button onClick=TransformarEmoticon()>Emoticon</button>
-    <button onClick=TransformarCharacter() >Texto</button>
-    <script>
-            let emoji = [
-                {
-                'texto': ":(",
-                'emoticon': "☹️",
-                },
-                {
-                'texto': ":)",
-                'emoticon': "🙂",
-                },
-                {
-                'texto': ":D",
-                'emoticon': "😁",
-                },
-            ]
-         const TransformarEmoticon=()=>{ 
-            document.getElementById('demo').innerText = String.fromCodePoint(128516);
-        }   
-        const TransformarCharacter=()=>{ 
-            document.getElementById('demo').textContent = ":(";
-          
-        }   
-  
-      
-      
-        // 
-    </script>
+    <header><h1>08 - Ejercicios DOM</h1></header>
+    <div class="ejercicio01">
+        <h2>Utilizando getElementById y innerHTML transformar el emoticon en un smiley</h2>
+        <p id="demo"> :( </p>
+        <button onClick=TransformarEmoticon()>Emoticon</button>
+        <button onClick=TransformarCharacter() >Texto</button>
+    </div>
+    <div class="ejercicio02">
+        <h2>Utilizando la instrucción setInterval mostrar la hora exacta y actualizarla cada segundo.</h2>
+        <p id="tiempo" ></p>
+    </div>
+ 
+    <script type="text/javascript">
+        let emoji = 
+            {
+            'texto': ":(",
+            'emoticon': "☹️",
+            }
     
+    const TransformarEmoticon=()=>{ 
+        document.getElementById('demo').innerText = String.fromCodePoint(128516);
+    };
+    
+    const TransformarCharacter=()=>{ 
+        document.getElementById('demo').innerHTML = emoji.texto;          
+    };   
+
+    const showHora = ()=> {
+        let fecha = new Date();
+        let tiempo = fecha.toLocaleTimeString();
+        document.getElementById('tiempo').innerHTML = tiempo;
+        console.log(tiempo);
+    }
+    let display = setInterval(showHora,2000);
+
+
+ 
+    </script>
+
 </body>
+ 
 </html>
