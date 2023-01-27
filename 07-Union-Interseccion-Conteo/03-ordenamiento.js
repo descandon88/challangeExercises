@@ -43,7 +43,6 @@ console.log(new_Array);
 let arr3 = [1,3,2,17,15,9,6,8,15,12];
 const menorAmayor = (arr)=>{
     let arrIn=[...arr];
-    let newArray=[];
     let tmp = 0;
     for (let index = 1; index < arr.length; index++) {
         for (let j = 0; j < index; j++) {
@@ -67,7 +66,6 @@ console.log(creciente);
 let arr4 = [21,2,4,4,5,3,2,32,5,6,10,12];
 const mayorAmenor = (arr) =>{
     let arrIn=[...arr];
-    let newArray=[];
     let tmp = 0;
     for (let index = 1; index < arr.length; index++) {
         for (let j = 0; j < index; j++) {
