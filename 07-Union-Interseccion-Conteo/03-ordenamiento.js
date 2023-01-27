@@ -40,19 +40,23 @@ console.log(new_Array);
 
 // Crear una función que reciba un arreglo y que cree uno nuevo con todos los
 // elementos ordenados de menor a mayor, (sin ocupar el método .sort)
-let arr3 = [1,3,2,17,27];
+let arr3 = [1,3,2,17,15,9,6,8,15,12];
 const menorAmayor = (arr)=>{
-    let newArray=[...arr];
+    let arrIn=[...arr];
+    let newArray=[];
+    let tmp = 0;
     for (let index = 1; index < arr.length; index++) {
-       if(arr[index-1]<arr[index]){ 
-        newArray.push(arr[index]);
-     } else {
-        newArray.push('');
-     }
-       
-        
+        for (let j = 0; j < index; j++) {
+            console.log('arraIn: '+arrIn);
+            if(arrIn[j]>=arrIn[index]){ 
+                tmp = arrIn[index];
+                arrIn[index] = arrIn[j];
+                arrIn[j]=tmp;         
+                console.log('arrIn'+arrIn);
+            }                 
+        }                  
     }
-   return newArray;
+   return arrIn;
 };
 
 let creciente = menorAmayor(arr3);
@@ -60,9 +64,23 @@ console.log(creciente);
 
 // Crear una función que reciba un arreglo y que cree uno nuevo con todos los
 // elementos ordenados de mayor a menor.
-let arr4 = [1,2,4,4,5,3,2,3,5,6,10,12];
+let arr4 = [21,2,4,4,5,3,2,32,5,6,10,12];
 const mayorAmenor = (arr) =>{
-    let newArray=[...arr];
+    let arrIn=[...arr];
+    let newArray=[];
+    let tmp = 0;
+    for (let index = 1; index < arr.length; index++) {
+        for (let j = 0; j < index; j++) {
+            console.log('arraIn: '+arrIn);
+            if(arrIn[j]<=arrIn[index]){ 
+                tmp = arrIn[index];
+                arrIn[index] = arrIn[j];
+                arrIn[j]=tmp;         
+                console.log('arrIn'+arrIn);
+            }                 
+        }                  
+    }
+   return arrIn;
 
 };
 let decreciente = mayorAmenor(arr4);
