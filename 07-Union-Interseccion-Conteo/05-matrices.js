@@ -40,12 +40,60 @@ let arr3 = [[3,1],[3,2]];
 // arr3 = [...arr2];
 
 console.log(sumar(arr2,arr3));
+
+
 // ● Contar la cantidad de elementos dentro de una matriz.
+const contarElementosMatriz = (matrix) => {
+    let row = 0;
+    let col =0;
+    for (let i = 0; i < matrix.length; i++) {
+        row+=1;
+        if (i===(matrix.length-1)){ 
+            for (let j = 0; j < matrix[i].length; j++) {
+            col+=1;
+            console.log(col);
+            }    
+        }           
+    }
+    console.log('nFilas: '+row+' nColumnas: '+ col);
+}
+let matr4 = [[3,1,4,54,1,7],[3,2,5,5,6,9],[3,2,5,1,1,11],[3,2,5,1,1,0]];
+contarElementosMatriz(matr4);
 
 // ● Multiplicar una matriz por un escalar, si la matriz inicial es
 // [[1,2,3],[4,5,6]], al multiplicarla por dos deberíamos obtener
 // [[2,4,6],[8,10,12]].
+
+const multiplicarMatrizEscalar =(esca,matrix)=> {
+    // let innerMatrix = [];
+    let innerRow=[];
+    let newMatrix=[];
+    let value=0;
+    for (let i = 0; i< matrix.length; i++) {
+        for(let j = 0; j< matrix[i].length; j++) {
+            newMatrix[i] = [];
+        }
+    }
+    for (let i = 0; i < matrix.length; i++) {
+        innerRow = matrix[i];
+        for (let j = 0; j < innerRow.length; j++) {
+            // newRow.push(esca*innerMatrix[j]);
+            newMatrix[i][j]=esca*innerRow[j];
+        }
+    
+        // console.log(newMatrix);
+
+    }
+
+    return newMatrix;
+}
+let matr5 = [[3,1,4,54,1,7],[3,2,5,5,6,9]];
+let escalar = 2;
+console.log(multiplicarMatrizEscalar(escalar,matr5));
+
 // ● Encontrar el número mayor en una matriz.
+
+
 // ● Determinar si un determinado número se encuentra dentro de una
 // matriz o no.
 // ● Devolver la suma de todos los elementos en la diagonal de la matriz.
